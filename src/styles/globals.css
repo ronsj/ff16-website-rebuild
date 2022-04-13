@@ -18,7 +18,7 @@ body,
 }
 
 body {
-  line-height: 1.5;
+  /* line-height: 1.5; */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -54,6 +54,21 @@ h6 {
 
 /* Global */
 
+html,
+body {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 821px) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
+
 body {
   font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
 }

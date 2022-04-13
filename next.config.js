@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     concurrentFeatures: true,
     serverComponents: true,
+    images: {
+      layoutRaw: true,
+    },
   },
   swcMinify: true,
   i18n: {
