@@ -1,7 +1,7 @@
 # FF16 Website Rebuild
-[https://na.finalfantasyxvi.com/](https://na.finalfantasyxvi.com/)
 
-Rebuilding the Final Fantasy XVI website from scratch with the goal of improving Google PageSpeed scores.
+
+Rebuilding the [Final Fantasy XVI website](https://na.finalfantasyxvi.com/) from scratch with the goal of improving Google PageSpeed scores and overall performance.
 
 Scores as of April 12, 2022:
 - Mobile: 28
