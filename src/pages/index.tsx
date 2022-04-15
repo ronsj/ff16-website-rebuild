@@ -14,7 +14,7 @@ import styles from '../styles/Home.module.css'
 import heroSp from '../../public/assets/images/na/kv/kv_sp.jpg'
 
 const mediaQuery = {
-  lg: '(min-width: 821px) and (orientation: landscape)',
+  lg: '(min-width: 821px)',
 }
 
 const Home: NextPage = () => {
@@ -131,13 +131,12 @@ const Home: NextPage = () => {
             </div>
           </div>
         </SectionContainer>
-        <SectionContainer style={{ textAlign: 'center' }}>
+        <SectionContainer
+          className={styles.social_media}
+          style={{ textAlign: 'center' }}
+        >
           <h2>Social Media</h2>
-          <p>
-            Follow these accounts to receive
-            <br />
-            the latest updates.
-          </p>
+          <p>Follow these accounts to receive the latest updates.</p>
           <ul className={styles.social_media_links}>
             <li>
               <ExternalLink href="https://twitter.com/finalfantasyxvi">
@@ -230,11 +229,16 @@ const Home: NextPage = () => {
 }
 
 type SectionContainerProps = {
-  children: ReactNode
+  className?: string
   style?: CSSProperties
+  children: ReactNode
 }
 
-function SectionContainer({ children, style }: SectionContainerProps) {
+function SectionContainer({
+  className = '',
+  children,
+  style,
+}: SectionContainerProps) {
   const controls = useAnimation()
   const [ref, inView] = useInView()
 
@@ -255,7 +259,7 @@ function SectionContainer({ children, style }: SectionContainerProps) {
       animate={controls}
       initial="hidden"
       variants={variants}
-      className={styles.section_container}
+      className={`${styles.section_container} ${className}`}
       style={style}
     >
       {children}

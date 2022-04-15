@@ -58,27 +58,6 @@
   margin-bottom: 1.5rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 820px) {
-  .hero_heading {
-    top: 85vh;
-    bottom: auto;
-  }
-}
-
-@media screen and (min-width: 821px) {
-  .hero_heading {
-    width: auto;
-    padding-inline: initial;
-    bottom: auto;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-  }
-  .hero_heading h1 {
-    margin-bottom: 3rem;
-  }
-}
-
 .hero_heading svg {
   filter: drop-shadow(0.15vw 0.15vw 0.6vw rgba(0, 0, 0, 0.5));
 }
@@ -260,10 +239,84 @@
   line-height: 1.4;
 }
 
+/* Medium screens */
+
+@media screen and (min-width: 768px) and (max-width: 820px) {
+  .hero_heading {
+    top: 85vh;
+    bottom: auto;
+  }
+}
+
+/* Large Screens */
+
 @media screen and (min-width: 821px) {
+  .hero {
+    margin-bottom: 8vw;
+  }
+  .hero_heading {
+    width: auto;
+    padding-inline: initial;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero_heading h1 {
+    margin-bottom: 2vw;
+  }
   .hero_heading p {
     font-size: 1.17vw;
     font-weight: 600;
+  }
+  .section_container {
+    margin-bottom: 4vw;
+  }
+  .link_block_cta h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0;
+  }
+  .link_block_cta img {
+    height: 2.67rem;
+  }
+  .social_media h2 {
+    font-size: 3.5rem;
+    line-height: 1.4;
+  }
+  .social_media_links {
+    max-width: 32vw;
+    margin-inline: auto;
+    padding-top: 4vw;
+  }
+  .social_media_links a svg {
+    height: 3.2vw;
+    width: 3.2vw;
+  }
+  .social_media_links_ps5 {
+    max-width: 32vw;
+  }
+  .footer_game_rating {
+    justify-content: center;
+  }
+  .footer_links {
+    flex-flow: row nowrap;
+    padding-inline: 0;
+  }
+  .footer_links li {
+    flex: 0 1 auto;
+    margin-right: 2rem;
+    font-size: 0.8rem;
+  }
+  .footer_copy br {
+    display: none;
+  }
+  .footer_copy,
+  .footer_trademark {
+    font-size: 0.67rem;
+    text-align: left;
+    line-height: 1.8;
   }
   .firespark_video_portrait {
     display: none;
