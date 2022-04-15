@@ -137,6 +137,10 @@
   backface-visibility: hidden;
 }
 
+.social_media {
+  text-align: center;
+}
+
 .social_media_links {
   display: flex;
   flex-flow: row nowrap;
@@ -320,9 +324,6 @@
     flex: 0 1 auto;
     margin-right: 2rem;
     font-size: 0.8rem;
-  }
-  .footer_copy br {
-    display: none;
   }
   .footer_copy,
   .footer_trademark {

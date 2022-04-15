@@ -1,40 +1,23 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { CSSProperties, ReactNode, useEffect } from 'react'
+import { SectionContainer } from '../components/SectionContainer'
+import { DetailsButton } from '../components/DetailsButton'
+import { FiresparkLoopingVideo } from '../components/FiresparkLoopingVideo'
+import { ExternalLink } from '../components/ExternalLink'
 import Logo from '../components/icons/Logo'
 import Facebook from '../components/icons/Facebook'
 import Instagram from '../components/icons/Instagram'
 import Twitter from '../components/icons/Twitter'
 import PS5 from '../components/icons/PS5'
 import SquareEnix from '../components/icons/SquareEnix'
-import { useAnimation, motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import styles from '../styles/Home.module.css'
-import heroSP from '../../public/assets/images/na/kv/kv_sp.jpg'
-import heroPC from '../../public/assets/images/na/kv/kv_pc.jpg'
-import playBtnPC from '../../public/assets/images/na/trailer/trailer_playbtn_pc.png'
-import playBtnSP from '../../public/assets/images/na/trailer/trailer_playbtn_sp.png'
+import * as mediaQueries from '../lib/mediaQueries'
 import useMediaQuery from '../lib/useMediaQuery'
-import trailerFramePC from '../../public/assets/images/na/trailer/trailer_frame_pc.png'
-import trailerFrameSP from '../../public/assets/images/na/trailer/trailer_frame_sp.png'
-import trailerThumbPC from '../../public/assets/images/na/trailer/trailer_thumbnail_pc.jpg'
-import trailerThumbSP from '../../public/assets/images/na/trailer/trailer_thumbnail_sp.jpg'
-import worldPC from '../../public/assets/images/na/common/world_pc.jpg'
-import worldSP from '../../public/assets/images/na/common/world_sp.jpg'
-import characterPC from '../../public/assets/images/na/common/character_pc.jpg'
-import characterSP from '../../public/assets/images/na/common/character_sp.jpg'
-import detailsBtnPC from '../../public/assets/images/na/common/details_btn_pc.png'
-import detailsBtnSP from '../../public/assets/images/na/common/details_btn_sp.png'
-import rating01 from '../../public/assets/images/na/footer/rating01.png'
-import rating02 from '../../public/assets/images/na/footer/rating02.png'
-
-const mediaQuery = {
-  lg: '(min-width: 821px)',
-}
+import * as images from '../lib/images'
+import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  let isMediaLarge = useMediaQuery('(min-width: 821px)')
+  let isMediaLarge = useMediaQuery(mediaQueries.large)
 
   return (
     <>
@@ -44,12 +27,8 @@ const Home: NextPage = () => {
           name="description"
           content="FINAL FANTASY XIV OFFICIAL WEBSITE The legacy of the crystals has shaped our history for long enough."
         />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* Hero */}
       <header className={styles.page_header}>
         <SquareEnix />
         <PS5 />
@@ -59,14 +38,14 @@ const Home: NextPage = () => {
           {isMediaLarge ? (
             <Image
               className={styles.hero_image}
-              src={heroPC}
+              src={images.heroPC}
               alt="Final Fantasy XVI art"
               layout="responsive"
             />
           ) : (
             <Image
               className={styles.hero_image}
-              src={heroSP}
+              src={images.heroSP}
               alt="Final Fantasy XVI art"
               layout="responsive"
             />
@@ -80,17 +59,17 @@ const Home: NextPage = () => {
             </p>
           </div>
         </section>
-        <SectionContainer>
+        <SectionContainer className={styles.section_container}>
           <div className={styles.trailer_button}>
             {isMediaLarge ? (
               <Image
-                src={playBtnPC}
+                src={images.playBtnPC}
                 alt="open video modal"
                 layout="responsive"
               />
             ) : (
               <Image
-                src={playBtnSP}
+                src={images.playBtnSP}
                 alt="open video modal"
                 layout="responsive"
               />
@@ -98,46 +77,38 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.trailer_frame}>
             {isMediaLarge ? (
-              <Image
-                src={trailerFramePC}
-                alt=""
-                layout="responsive"
-              />
+              <Image src={images.trailerFramePC} alt="" layout="responsive" />
             ) : (
-              <Image
-                src={trailerFrameSP}
-                alt=""
-                layout="responsive"
-              />
+              <Image src={images.trailerFrameSP} alt="" layout="responsive" />
             )}
           </div>
           <div className={styles.trailer_thumbnail}>
             {isMediaLarge ? (
               <Image
-                src={trailerThumbPC}
+                src={images.trailerThumbPC}
                 alt="final fantasy 16 awakening trailer thumbnail"
                 layout="responsive"
               />
             ) : (
               <Image
-                src={trailerThumbSP}
+                src={images.trailerThumbSP}
                 alt="final fantasy 16 awakening trailer thumbnail"
                 layout="responsive"
               />
             )}
           </div>
         </SectionContainer>
-        <SectionContainer>
+        <SectionContainer className={styles.section_container}>
           <div className={styles.link_block}>
             {isMediaLarge ? (
               <Image
-                src={worldPC}
+                src={images.worldPC}
                 alt="final fantasy 16 city concept art"
                 layout="responsive"
               />
             ) : (
               <Image
-                src={worldSP}
+                src={images.worldSP}
                 alt="final fantasy 16 city concept art"
                 layout="responsive"
               />
@@ -146,34 +117,33 @@ const Home: NextPage = () => {
               <h2>
                 The <span className={styles.kearning_xs}>W</span>orld
               </h2>
-              <DetailsButton />
+              <DetailsButton className={styles.link_block_cta_details_btn} />
             </div>
           </div>
         </SectionContainer>
-        <SectionContainer>
+        <SectionContainer className={styles.section_container}>
           <div className={styles.link_block}>
             {isMediaLarge ? (
               <Image
-                src={characterPC}
+                src={images.characterPC}
                 alt="final fantasy 16 character concept art"
                 layout="responsive"
               />
             ) : (
               <Image
-                src={characterSP}
+                src={images.characterSP}
                 alt="final fantasy 16 character concept art"
                 layout="responsive"
               />
             )}
             <div className={styles.link_block_cta}>
               <h2>The Characters</h2>
-              <DetailsButton />
+              <DetailsButton className={styles.link_block_cta_details_btn} />
             </div>
           </div>
         </SectionContainer>
         <SectionContainer
-          className={styles.social_media}
-          style={{ textAlign: 'center' }}
+          className={`${styles.section_container} ${styles.social_media}`}
         >
           <h2>Social Media</h2>
           <p>Follow these accounts to receive the latest updates.</p>
@@ -204,16 +174,10 @@ const Home: NextPage = () => {
         <footer className={styles.section_container}>
           <div className={styles.footer_game_rating}>
             <ExternalLink href="https://esrb.com">
-              <Image
-                src={rating01}
-                alt="ESRB rating pending"
-              />
+              <Image src={images.rating01} alt="ESRB rating pending" />
             </ExternalLink>
             <ExternalLink href="https://esrb.org/EPCConfirm/907/">
-              <Image
-                src={rating02}
-                alt="ESRB privacy certified"
-              />
+              <Image src={images.rating02} alt="ESRB privacy certified" />
             </ExternalLink>
           </div>
           <ul className={styles.footer_links}>
@@ -239,7 +203,8 @@ const Home: NextPage = () => {
             </li>
           </ul>
           <p className={styles.footer_copy}>
-            © SQUARE ENIX CO., LTD. ALL RIGHTS RESERVED. <br />
+            © SQUARE ENIX CO., LTD. ALL RIGHTS RESERVED.{' '}
+            {!isMediaLarge && <br />}
             LOGO ILLUSTRATION: © 2020 YOSHITAKA AMANO
           </p>
           <p className={styles.footer_trademark}>
@@ -265,99 +230,6 @@ const Home: NextPage = () => {
         </div>
       </main>
     </>
-  )
-}
-
-type SectionContainerProps = {
-  className?: string
-  style?: CSSProperties
-  children: ReactNode
-}
-
-function SectionContainer({
-  className = '',
-  children,
-  style,
-}: SectionContainerProps) {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-  }, [controls, inView])
-
-  const variants = {
-    visible: { opacity: 1, top: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, top: '1rem' },
-  }
-
-  return (
-    <motion.section
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={variants}
-      className={`${styles.section_container} ${className}`}
-      style={style}
-    >
-      {children}
-    </motion.section>
-  )
-}
-
-function DetailsButton() {
-  let isMediaLarge = useMediaQuery('(min-width: 821px)')
-
-  return isMediaLarge ? (
-    <Image
-      className={styles.link_block_cta_details_btn}
-      src={detailsBtnPC}
-      alt="MORE DETAILS"
-      layout="responsive"
-    />
-  ) : (
-    <Image
-      className={styles.link_block_cta_details_btn}
-      src={detailsBtnSP}
-      alt="MORE DETAILS"
-    />
-  )
-}
-
-type FiresparkLoopingVideoProps = {
-  className: string
-  src: string
-}
-
-function FiresparkLoopingVideo({ className, src }: FiresparkLoopingVideoProps) {
-  return (
-    <video
-      className={className}
-      src={src}
-      playsInline
-      muted
-      loop
-      autoPlay
-    />
-  )
-}
-
-type ExternalLinkProps = {
-  href: string
-  children: ReactNode
-}
-
-function ExternalLink({ href, children }: ExternalLinkProps) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {children}
-    </a>
   )
 }
 
