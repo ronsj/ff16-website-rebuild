@@ -112,9 +112,11 @@
 .link_block_cta {
   position: absolute;
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
   line-height: 1;
-  margin-left: 8vw;
+  padding-inline: 8vw;
+  width: 100%;
 }
 
 .link_block_cta h2 {
@@ -128,8 +130,7 @@
   letter-spacing: -0.12em;
 }
 
-.link_block_cta img {
-  height: 1.75rem;
+.link_block_cta_details_btn {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   -webkit-backface-visibility: hidden;
@@ -288,8 +289,9 @@
     margin-bottom: 1.5rem;
     letter-spacing: 0;
   }
-  .link_block_cta img {
-    height: 2.67rem;
+  /* next/image component hack */
+  .link_block_cta > *:nth-child(2) {
+    width: 15vw !important;
   }
   .social_media h2 {
     font-size: 3.5rem;
