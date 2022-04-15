@@ -11,12 +11,6 @@
   margin: 0;
 }
 
-html,
-body,
-#__next {
-  height: 100%;
-}
-
 body {
   /* line-height: 1.5; */
   -webkit-font-smoothing: antialiased;
@@ -68,7 +62,14 @@ body {
 
 body {
   font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+  font-feature-settings: 'palt';
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
+  padding-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }

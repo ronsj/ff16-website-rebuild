@@ -20,10 +20,6 @@
   }
 }
 
-.hero_image {
-  position: relative;
-}
-
 .hero_image > img {
   width: 100%;
   animation: 4s ease zoomOut, 1s ease fadeIn;
@@ -70,7 +66,7 @@
 }
 
 .hero_heading svg {
-  filter: drop-shadow(0.15vw 0.15vw 0.6vw rgba(0, 0, 0, 1));
+  filter: drop-shadow(0.15vw 0.15vw 0.6vw rgba(0, 0, 0, 0.5));
 }
 
 .hero_heading p {
@@ -78,6 +74,108 @@
   line-height: 1.4;
   font-weight: 600;
   text-shadow: 0 0 1.17vw #000;
+}
+
+.section_container {
+  position: relative;
+  width: 84vw;
+  margin-inline: auto;
+  margin-bottom: 8vw;
+}
+
+.section_container h2 {
+  font-variant: small-caps;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.trailer_frame {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.trailer_button {
+  position: relative;
+  width: 12.27vw;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trailer_thumbnail {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.link_block {
+  position: relative;
+}
+
+.link_block_cta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  margin-left: 8vw;
+}
+
+.link_block_cta h2 {
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 1.5vw #00000080;
+  margin-bottom: 0.5rem;
+  filter: blur(0.325px);
+}
+
+.kearning_xs {
+  letter-spacing: -0.12em;
+}
+
+.link_block_cta img {
+  height: 1.75rem;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.social_media_links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  padding-top: 8vw;
+  margin-bottom: 6rem;
+}
+
+.social_media_links li {
+  list-style: none;
+  flex: 1 0 calc(100% / 3);
+}
+
+.social_media_links a {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.social_media_links a svg {
+  height: 10vw;
+  width: 10vw;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.social_media_links_ps5 {
+  width: 57vw;
+  height: 10vw;
+  margin-inline: auto;
 }
 
 .firespark {
@@ -115,6 +213,37 @@
 
 .firespark_video_landscape {
   display: none;
+}
+
+.footer_game_rating {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  padding: 2rem;
+  margin-block: 2rem;
+  border-block: 1px solid #3b3a3b;
+}
+
+.footer_links {
+  display: flex;
+  flex-flow: row wrap;
+  padding-inline: 4vw;
+  margin-bottom: 1rem;
+}
+
+.footer_links li {
+  list-style: none;
+  flex: 1 0 50%;
+  font-size: 12px;
+  margin-bottom: 1em;
+}
+
+.footer_copy,
+.footer_trademark {
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
 }
 
 @media screen and (min-width: 821px) {
