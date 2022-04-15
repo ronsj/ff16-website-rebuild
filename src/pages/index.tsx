@@ -11,6 +11,7 @@ import SquareEnix from '../components/icons/SquareEnix'
 import { useAnimation, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styles from '../styles/Home.module.css'
+import heroSp from '../../public/assets/images/na/kv/kv_sp.jpg'
 
 const mediaQuery = {
   lg: '(min-width: 821px) and (orientation: landscape)',
@@ -75,7 +76,7 @@ const Home: NextPage = () => {
               />
               <img
                 src="/assets/images/na/trailer/trailer_frame_sp.png"
-                role="presentation"
+                alt=""
               />
             </picture>
           </div>
