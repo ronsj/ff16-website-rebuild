@@ -251,6 +251,16 @@
 /* Large Screens */
 
 @media screen and (min-width: 821px) {
+  .page_header {
+    padding-inline: 2vw;
+    padding-top: 2vw;
+  }
+  .page_header svg:first-child {
+    flex: 0 1 calc(100vw / 6);
+  }
+  .page_header svg:nth-child(2) {
+    flex: 0 1 calc(100vw / 9);
+  }
   .hero {
     margin-bottom: 8vw;
   }
